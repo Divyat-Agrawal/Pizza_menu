@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
 const pizzaData = [
   {
     name: "Focaccia",
@@ -46,47 +42,3 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
-function App() {
-  return (
-    <div className="container">
-      <Header />
-      <Menu />
-      <Footer />
-    </div>
-  );
-}
-
-function Header() {
-  // const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
-  const style = {};
-
-  return (
-    <header className="header">
-      <h1 style={style}>Fast React Pizza Co.</h1>
-    </header>
-  );
-}
-
-function Menu() {
-  return <h2 className="menu">Our menu</h2>;
-}
-
-function Footer() {
-  const hour = new Date().getHours();
-  const openHour = 12;
-  const closeHour = 20;
-  const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
-
-  // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
-  // else alert("Sorry we're closed");
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
